@@ -1,0 +1,5 @@
+//НОК чисел x,y
+double gcd (int x, int y )
+{
+if (y==0) return x; else return gcd (y, x % y );//return (( y == 0) ? x : gcd (y, x % y ));
+}

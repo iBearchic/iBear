@@ -1,0 +1,35 @@
+#include <iostream> 
+#include <math.h> 
+using namespace std; 
+int snake(int m, int n, int**A){ 
+int k=0; 
+int x; 
+x=min((m+1)/2,(n+1)/2)-1; 
+for(int j=0;j<x;j++){ 
+for (int i=j;i<n-j;i++)A[m-j-1][i]=k++; 
+for (int i=m-j-2;i>j;i--)A[i][n-j-1]=k++; 
+for (int i=n-2-j;i>=j;i--)A[j][i]=k++; 
+for (int i=1;i<n-1;i++)A[i][j]=k++; 
+} 
+} 
+
+int main(){ 
+int m; 
+int n; 
+cout«"Enter m,n "; 
+cin»m»n; 
+int **A; 
+A = new int * [m]; 
+for (int i=0; i<m; i++) A[i] = new int [n]; 
+snake(m,n,A); 
+for (int i=0;i<m;i++){ 
+for (int j=0;j<n;j++) {cout«A[i][j]«" "; 
+} 
+cout«endl; 
+} 
+for (int i = 0; i < m; i++) { 
+delete [] A[i]; 
+} 
+delete [] A; 
+return 0; 
+}

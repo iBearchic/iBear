@@ -2,14 +2,15 @@
 #include <math.h> 
 using namespace std; 
 int snake(int m, int n, int**A){ 
-int k=0; 
+int k=1; 
 int x; 
-x=min((m+1)/2,(n+1)/2)-1; 
+x=min((m+1)/2,(n+1)/2); 
+cout«"x= "«x«endl; 
 for(int j=0;j<x;j++){ 
 for (int i=j;i<n-j;i++)A[m-j-1][i]=k++; 
-for (int i=m-j-2;i>j;i--)A[i][n-j-1]=k++; 
+for (int i=m-j-2;i>=j;i--)A[i][n-j-1]=k++; 
 for (int i=n-2-j;i>=j;i--)A[j][i]=k++; 
-for (int i=1;i<n-1;i++)A[i][j]=k++; 
+for (int i=j+1;i<n-j-1;i++)A[i][j]=k++; 
 } 
 } 
 

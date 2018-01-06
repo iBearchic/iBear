@@ -1,0 +1,17 @@
+#include <iostream>
+
+using namespace std;
+
+int main()
+{
+    int n,m;
+cin>>m;
+    n=30;
+    for(int j=3;j<=m;j++){
+    cout<<"F^"<<j<<": ";
+    for(int i=0;i<n;i++){
+       cout<< i*((j-2)*(i-1)+2)/2<<" ";
+    }
+    cout<<endl;
+    }
+}

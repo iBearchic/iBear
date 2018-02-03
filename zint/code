@@ -1,0 +1,69 @@
+#include <iostream>
+#include <vector>
+using namespace std;
+struct zint{
+    vector <int> arr;
+    int a;
+void swap(zint&a,zint&b);
+bool operator !=(zint&a);
+zint(int a=0){
+    while(a!=1){
+        for(int i=2;i<=a;i++){
+            if(a%i==0){
+                arr.push_back(i);
+                a/=i;
+                i=2;
+            }
+        }
+    }
+}
+};
+ostream& operator<<(ostream &out,const zint &arr){
+for(int i=2;i<=arr.size;i++){
+    out<<arr.arr[i]<<" ";
+    
+}
+return out;
+
+}
+
+void swap(zint&a,zint&b){
+zint temp= a;
+a=b;
+b=a;
+}
+
+bool zint:: operator !=(zint&a){
+if(this->a==a.a)
+   return 0;
+else
+    return 1;
+
+}
+
+
+
+
+
+
+
+
+
+int main()
+{
+ int n,s;
+ cout<<"Enter integers: ";
+ cin>>n>>s;
+zint a(n);
+zint b(s);
+if(a!=b)
+    cout<<"zint("<<n<<") is not equally to zint("<<s<<")";
+  else
+  cout<<"zint("<<n<<") is equally to zint("<<s<<")";
+  swap(a,b);
+  
+
+
+
+   return 0;
+}

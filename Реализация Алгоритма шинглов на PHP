@@ -1,9 +1,15 @@
 <?php
 
 
+$text = "Текст для сравнения номер один" ;
+$text2 = "Текст для сравнения номер два" ;
+echo Shingles::analyze($text2, $text) ;
+
+
+
 class Shingles { 
 
-const SHINGLES_LEN = 3 ;   
+const SHINGLES_LEN = 1 ;   
 
 public static function analyze ($source1, $source2)    
 {      
@@ -103,13 +109,5 @@ private static $filter = array(
 
 }
 
-
- 
-$text = "my name is Max." ;
-$text2 = "Hi, Max is my name." ;
-echo Shingles::analyze($text2, $text) ;
-
-
-
-
 ?>
+

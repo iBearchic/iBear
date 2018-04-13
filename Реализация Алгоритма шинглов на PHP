@@ -1,3 +1,6 @@
+<?php
+
+
 class Shingles { 
 
 const SHINGLES_LEN = 10 ;   
@@ -100,3 +103,6 @@ private static $filter = array(
 
 }
 
+
+
+?>

@@ -104,7 +104,7 @@ private static $filter = array(
 }
 
 
-require_once "shingles.php" ; 
+ 
 $text = "my name is Max." ;
 $text2 = "Hi, Max is my name." ;
 echo Shingles::analyze($text2, $text) ;

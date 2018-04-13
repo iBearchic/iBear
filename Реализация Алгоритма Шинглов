@@ -1,0 +1,48 @@
+#include <iostream>
+ 
+#include <string>
+using namespace std;
+ 
+int main()
+{
+ 
+    string stopwords[5];
+    string stopsymbols[5];
+    string s = "Or me, or you- and; me:";
+    int len = s.length();
+
+ 
+    stopwords[0] = "and";
+    stopwords[1] = "or";
+    stopwords[2] = "no";
+    stopwords[3] = "not";
+    stopwords[4] = "if";
+ 
+    stopsymbols[0] = ".";
+    stopsymbols[1] = ",";
+    stopsymbols[2] = "-";
+    stopsymbols[3] = ";";
+    stopsymbols[4] = ":";
+ 
+ 
+ 
+for(int i = 0; i < 5; i++)
+    {
+        int pos = 0;
+        while((pos = s.find(stopwords[i], pos)) != s.npos)
+        {
+            s.erase(pos, stopwords[i].size());
+        }
+    }
+ 
+        for(int i = 0; i < 5; i++)
+    {
+        int pos = 0;
+        while((pos = s.find(stopsymbols[i], pos)) != s.npos)
+        {
+            s.erase(pos, stopsymbols[i].size());
+        }
+    }
+        cout << "canonize string " << s << endl;
+    return 0;
+}

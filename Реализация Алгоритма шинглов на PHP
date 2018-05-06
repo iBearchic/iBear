@@ -9,7 +9,7 @@ echo Shingles::analyze($text2, $text) ;
 
 class Shingles { 
 
-const SHINGLES_LEN = 3 ;   
+const SHINGLES_LEN = 2 ;   
 
 public static function analyze ($source1, $source2)    
 {      

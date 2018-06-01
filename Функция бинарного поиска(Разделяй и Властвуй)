@@ -1,0 +1,36 @@
+#include <iostream>
+
+using namespace std;
+
+bool bin_search(int*A,int x, int m, int n){
+if (m==n){
+    if(A[m]==x) {return 1;}
+    else{return 0;}
+    }
+int k=(m+n)/2;
+if(A[k]==x) return 1;
+if(A[k]>x){return bin_search(A,x,m,k);}
+else{return bin_search(A,x,k+1,n);}
+
+}
+
+
+
+int main()
+{
+   int n,x;
+   cin>>n;
+   int*A= new int[n];
+   for (int i=0;i<n;i++){
+    cin>>A[i];
+   }
+   cout<<"Enter the element you'd like to find "<<endl;
+   cin>>x;
+   if (bin_search(A,x,0,n-1)==true) cout<<"1";
+   else cout<<"0";
+   delete[]A;
+
+
+}
+
+

@@ -1,0 +1,14 @@
+void Qsort (int *A, int m, int n){ 
+int l = m, r = n; 
+int piv = A[(l+r)/2]; 
+while (l <= r){ 
+while (A[l] < piv) 
+l++; 
+while (A[r] > piv) 
+r--; 
+if (l <= r ) 
+swap(A[l++], A[r--]); 
+} 
+if (m < r) Qsort(A, m, r); 
+if (n > l) Qsort(A, l, n); 
+}
